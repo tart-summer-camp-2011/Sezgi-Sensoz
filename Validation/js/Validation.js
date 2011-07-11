@@ -35,6 +35,20 @@ Validation.prototype.isValidNameSurname = function(nameSurname){
         return false;
     }
     if (spacePlace > 1 && nameSurnameList[1] && nameSurnameList[0] && nameSurname.length <= 30){
+    //Name or surname cannot contain a number
+    var isNumberContains = false;
+    for(var i=0;i<nameSurname.length; i++){
+        if(!isNaN(nameSurname[i])  //Checking one by one is it number or not
+            && nameSurname[i] !== ' '){ //it shouldn't be a ' ' (space)
+            isNumberContains = true; //Change default value
+            break;
+        }
+    }
+
+    if(spacePlace>1 &&
+        nameSurname.length <=30 &&
+        nameSurnameList[1] &&
+        !isNumberContains){
         return true;
     }
     else return false;
