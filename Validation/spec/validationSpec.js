@@ -51,17 +51,32 @@ describe("Validation",function(){
             expect(result).toBeTruthy();
         });
 
-        it("Should NOT be valid Name Surname like 'Sezgi '",function(){
+        it("Should be valid Name Surname which contains two name like Sezgi Sezen Sensoz",function(){
+            var result = valid.isValidNameSurname('Sezgi Sezen Sensoz');
+            expect(result).toBeTruthy();
+        });
+
+        it("Should NOT be valid Name Surname which contains number like 'Sez112gi Sen321soz'",function(){
+            var result = valid.isValidNameSurname('Sez112gi Sen321soz');
+            expect(result).not.toBeTruthy();
+        });
+
+        it("Should NOT be valid Name Surname that contains one space after that like 'Sezgi '(one space)",function(){
             var result = valid.isValidNameSurname('Sezgi ');
             expect(result).not.toBeTruthy();
         });
 
-         it("Should NOT be valid Name Surname like ' Sezgi '",function(){
+        it("Should NOT be valid Name Surname that contains two space after that like 'Sezgi  '",function(){
+            var result = valid.isValidNameSurname('Sezgi  ');
+            expect(result).not.toBeTruthy();
+        });
+
+         it("Should NOT be valid Name Surname which contains two space before and after that like ' Sezgi '",function(){
             var result = valid.isValidNameSurname(' Sezgi ');
             expect(result).not.toBeTruthy();
         });
 
-         it("Should NOT be valid Name Surname like ' Sezgi'",function(){
+         it("Should NOT be valid Name Surname which contains one space before that like ' Sezgi'",function(){
             var result = valid.isValidNameSurname(' Sezgi');
             expect(result).not.toBeTruthy();
         });
@@ -70,8 +85,8 @@ describe("Validation",function(){
             var result = valid.isValidNameSurname('Sezgi.Sensoz');
             expect(result).toBeFalsy();
         });
-        it("Should NOT be valid Name Surname which have more than 30 character like 'Fatma Ayse Emine Hatice Yilmaz'",function(){
-            var result = valid.isValidNameSurname('Fatma Ayse Emine Hatice Yılmaz');
+        it("Should NOT be valid Name Surname which have more than 30 character like 'Fatma Ayse Emine Hatice Yilmazoglu'",function(){
+            var result = valid.isValidNameSurname('Fatma Ayse Emine Hatice Yilmazoglu');
             expect(result).toBeFalsy();
         });
 
