@@ -50,7 +50,6 @@ Validation.prototype.isValidNameSurname = function(nameSurname){
         !isNumberContains){
         return true;
     }
-    else return false;
 };
 
 /**
