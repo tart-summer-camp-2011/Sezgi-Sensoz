@@ -27,12 +27,16 @@ Validation.prototype.isValidEmail = function(email){
  */
 
 Validation.prototype.isValidNameSurname = function(nameSurname){
+    var spacePlace = nameSurname.indexOf(' ');
+    var nameSurnameList = nameSurname.split(' ');
+
     if(nameSurname == ''){
         return false;
     }
-    if (nameSurname.indexOf(' ') > 1 && nameSurname.length <= 30){
+    if (spacePlace > 1 && nameSurnameList[1] && nameSurname.length <= 30){
         return true;
     }
+    else return false;
 };
 
 /**
