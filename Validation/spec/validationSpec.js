@@ -61,6 +61,7 @@ describe("Validation",function(){
             var result = valid.isValidNameSurname('Sezgi.Sensoz');
             expect(result).toBeFalsy();
         });
+        it("Should NOT be valid Name Surname which have more than 30 character like 'Fatma Ayse Emine Hatice Yilmaz'",function(){
         it("Should be valid Name Surname which have more than 30 character like 'Fatma Ayse Emine Hatice Yilmaz'",function(){
             var result = valid.isValidNameSurname('Fatma Ayse Emine Hatice Yılmaz');
             expect(result).toBeFalsy();
