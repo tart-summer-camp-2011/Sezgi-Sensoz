@@ -29,12 +29,11 @@ Validation.prototype.isValidEmail = function(email){
 Validation.prototype.isValidNameSurname = function(nameSurname){
     var spacePlace = nameSurname.indexOf(' ');
     var nameSurnameList = nameSurname.split(' '); //Spliting string from ' ' and produce and array.
-    var nameSurnameList = nameSurname.split(' ');
 
     if(nameSurname == ''){
         return false;
     }
-    if (spacePlace > 1 && nameSurnameList[1] && nameSurnameList[0] && nameSurname.length <= 30){
+
     //Name or surname cannot contain a number
     var isNumberContains = false;
     for(var i=0;i<nameSurname.length; i++){
