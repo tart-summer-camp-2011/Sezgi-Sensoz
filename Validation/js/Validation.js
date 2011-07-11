@@ -28,6 +28,7 @@ Validation.prototype.isValidEmail = function(email){
 
 Validation.prototype.isValidNameSurname = function(nameSurname){
     var spacePlace = nameSurname.indexOf(' ');
+    var nameSurnameList = nameSurname.split(' '); //Spliting string from ' ' and produce and array.
     var nameSurnameList = nameSurname.split(' ');
 
     if(nameSurname == ''){
