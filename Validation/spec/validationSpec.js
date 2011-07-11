@@ -36,6 +36,7 @@ describe("Validation",function(){
             var result = valid.isValidEmail('sezgi.şensöz@şensöz.com.tr');
             expect(result).toBeTruthy();
         });
+
     });
 
     describe("Control Name Surname validation",function(){
@@ -54,6 +55,7 @@ describe("Validation",function(){
             var result = valid.isValidNameSurname('Sezgi ');
             expect(result).not.toBeTruthy();
         });
+
         it("Should NOT be valid Name Surname like Sezgi.Sensoz",function(){
             var result = valid.isValidNameSurname('Sezgi.Sensoz');
             expect(result).toBeFalsy();
