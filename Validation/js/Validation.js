@@ -33,7 +33,7 @@ Validation.prototype.isValidNameSurname = function(nameSurname){
     if(nameSurname == ''){
         return false;
     }
-    if (spacePlace > 1 && nameSurnameList[1] && nameSurname.length <= 30){
+    if (spacePlace > 1 && nameSurnameList[1] && nameSurnameList[0] && nameSurname.length <= 30){
         return true;
     }
     else return false;

@@ -51,8 +51,18 @@ describe("Validation",function(){
             expect(result).toBeTruthy();
         });
 
-        it("Should NOT be valid Name Surname like Sezgi ",function(){
+        it("Should NOT be valid Name Surname like 'Sezgi '",function(){
             var result = valid.isValidNameSurname('Sezgi ');
+            expect(result).not.toBeTruthy();
+        });
+
+         it("Should NOT be valid Name Surname like ' Sezgi '",function(){
+            var result = valid.isValidNameSurname(' Sezgi ');
+            expect(result).not.toBeTruthy();
+        });
+
+         it("Should NOT be valid Name Surname like ' Sezgi'",function(){
+            var result = valid.isValidNameSurname(' Sezgi');
             expect(result).not.toBeTruthy();
         });
 
