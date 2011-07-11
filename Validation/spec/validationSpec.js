@@ -35,9 +35,6 @@ describe("Validation",function(){
         it("Sould validate an email which have Turkish characters like sezgi.şensöz@şensöz.com.tr", function(){
             var result = valid.isValidEmail('sezgi.şensöz@şensöz.com.tr');
             expect(result).toBeTruthy();
-        it("Sould NOT validate an email which have Turkish characters like sezgi.şensöz@tart.com.tr", function(){
-            var result = valid.isValidEmail('sezgi.şensöz@tart.com.tr');
-            expect(result).not.toBeTruthy();
         });
     });
 
