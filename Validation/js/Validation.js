@@ -16,7 +16,7 @@ function Validation(){
  * @returns {boolean}
  */
 Validation.prototype.isValidEmail = function(email){
-    var regExpPattern = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    var regExpPattern = /^([A-Za-z0-9şŞıİçÇöÖüÜĞğ_\-\.])+\@([A-Za-z0-9şŞıİçÇöÖüÜĞğ_\-\.])+\.([A-Za-z]{2,4})$/;
     return regExpPattern.test(email);
 };
 
